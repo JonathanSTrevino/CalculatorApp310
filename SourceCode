@@ -1,0 +1,134 @@
+// Calculator Application - J Trevino 11.14.21
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+#include<stdlib.h>
+
+#define KEY "Enter the calculator function you want to complete:"
+
+// Declare function name
+void addition();
+void subtraction();
+void multiplication();
+void division();
+void div_O();
+void calculator_options();
+
+// Program Start
+int main()
+{
+    int J = 1;
+    char Calc_oprn;
+
+    // Name of functions added 
+    calculator_options();
+
+    while (J)
+    {
+        printf("\n");
+        printf("%s : ", KEY);
+
+        Calc_oprn = _getche();
+
+        switch (Calc_oprn)
+        {
+        case '+': addition();
+            break;
+
+        case '-': subtraction();
+            break;
+
+        case '*': multiplication();
+            break;
+
+        case '/': division();
+            break;
+        case 'd': div_O();
+            break;
+        
+            calculator_options();
+            break;
+
+        default: system("calc");
+
+            printf("\n**********You have entered an invalid entry");
+            printf("***********\n");
+            printf("\n*****Please enter any one of the ");
+            printf("options****\n");
+            calculator_options();
+        }
+    }
+}
+
+//Function Options for user
+
+void calculator_options()
+{
+    
+    printf("\n          JT's   Calculator \n\n");
+    printf("Enter +  for Addition \n");
+    printf("Enter -  for Subtraction \n");
+    printf("Enter *  for Multiplication \n");
+    printf("Enter /  for Division \n");
+    printf("Enter d for Integer Division");
+    
+}
+
+void addition()
+{
+    int n, SumOf = 0, j = 0, number;
+    printf("\nEnter the number of integers you want to add:");
+    scanf_s("%d", &n);
+    printf("Please enter %d numbers one by one: \n", n);
+    while (j < n)
+    {
+        scanf_s("%d", &number);
+        SumOf = SumOf + number;
+        j = j + 1;
+    }
+    printf("Sum of %d numbers = %d \n", n, SumOf);
+}
+
+void subtraction()
+{
+    int a, b, c = 0;
+    printf("\nPlease enter first number  : ");
+    scanf_s("%d", &a);
+    printf("Please enter second number : ");
+    scanf_s("%d", &b);
+    c = a - b;
+    printf("\n%d - %d = %d\n", a, b, c);
+}
+
+void multiplication()
+{
+    int a, b, multip = 0;
+    printf("\nPlease enter first number : ");
+    scanf_s("%d", &a);
+    printf("Please enter second number: ");
+    scanf_s("%d", &b);
+    multip = a * b;
+    printf("\nProduct of entered numbers = %d\n", multip);
+}
+
+void division()
+{
+    int a, b, div = 0;
+    printf("\nPlease enter first number  : ");
+    scanf_s("%d", &a);
+    printf("Please enter second number : ");
+    scanf_s("%d", &b);
+    div = a / b;
+    printf("\nQuotient of entered numbers=%d\n", div);
+}
+void div_O()
+{
+    float numerator;
+    float denominator;
+    div_t div(int numerator, int denominator);
+        printf("\nEnter integers to divide:");
+        scanf_s("%f");
+        scanf_s("%f");
+
+}
+    //return 0;
