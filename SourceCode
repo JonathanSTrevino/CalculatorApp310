@@ -1,4 +1,4 @@
-// Calculator Application - J Trevino 11.14.21
+// Calculator Application - J Trevino 11.14.21 revised 11.21.21
 #include<stdio.h>
 #include<conio.h>
 #include<math.h>
@@ -121,14 +121,13 @@ void division()
     div = a / b;
     printf("\nQuotient of entered numbers=%d\n", div);
 }
-void div_O()
+void div_O() //d operator calculation
 {
-    float numerator;
-    float denominator;
-    div_t div(int numerator, int denominator);
-        printf("\nEnter integers to divide:");
-        scanf_s("%f");
-        scanf_s("%f");
-
+    
+    int numerator, denominator;
+        printf("\nEnter integers to modular division:");
+        scanf_s("%d%d", &numerator, &denominator);
+        
+        printf("%d mod %d = %d\n", numerator, denominator, (numerator % denominator));
 }
     //return 0;
