@@ -1,4 +1,7 @@
-// Calculator Application - J Trevino 11.14.21 revised 11.21.21
+// Calculator Application - J Trevino 11.14.21 revised 11.28.21
+/*This application will complete mathematical functions with the integers
+entered by the user. The selection of the type of calculation can be selected
+first, then the numbers that are to be involved in the calculation*/
 #include<stdio.h>
 #include<conio.h>
 #include<math.h>
@@ -45,7 +48,9 @@ int main()
             break;
         case 'd': div_O();
             break;
-        
+        case 'Q':
+        case 'q': exit(0);
+            break;
             calculator_options();
             break;
 
@@ -66,11 +71,15 @@ void calculator_options()
 {
     
     printf("\n          JT's   Calculator \n\n");
-    printf("Enter +  for Addition \n");
+    printf("\n This application will complete mathematical functions with the numbers entered");
+    printf("\nEnter +  for Addition \n");
     printf("Enter -  for Subtraction \n");
     printf("Enter *  for Multiplication \n");
     printf("Enter /  for Division \n");
-    printf("Enter d for Integer Division");
+    printf("Enter d for Integer Division\n");
+    printf("******* Press 'Q' or 'q' to quit ");
+    printf("the program ********\n");
+
     
 }
 
@@ -130,4 +139,3 @@ void div_O() //d operator calculation
         
         printf("%d mod %d = %d\n", numerator, denominator, (numerator % denominator));
 }
-    //return 0;
