@@ -1,4 +1,4 @@
-// Calculator Application - J Trevino 11.14.21 revised 11.28.21
+// Calculator Application - J Trevino 11.14.21 revised 12.12.21
 /*This application will complete mathematical functions with the integers
 entered by the user. The selection of the type of calculation can be selected
 first, then the numbers that are to be involved in the calculation*/
@@ -43,7 +43,9 @@ int main()
 
         case '*': multiplication();
             break;
-
+        case 'H':
+        case 'h': calculator_options();
+            break;
         case '/': division();
             break;
         case 'd': div_O();
@@ -51,6 +53,8 @@ int main()
         case 'Q':
         case 'q': exit(0);
             break;
+        case 'c':
+        case 'C': system("cls");
             calculator_options();
             break;
 
@@ -61,6 +65,7 @@ int main()
             printf("\n*****Please enter any one of the ");
             printf("options****\n");
             calculator_options();
+            system("cls");  
         }
     }
 }
@@ -70,20 +75,24 @@ int main()
 void calculator_options()
 {
     
-    printf("\n          JT's   Calculator \n\n");
+    printf("\n       JT's   Calculator \n\n");
     printf("\n This application will complete mathematical functions with the numbers entered");
     printf("\nEnter +  for Addition \n");
     printf("Enter -  for Subtraction \n");
     printf("Enter *  for Multiplication \n");
     printf("Enter /  for Division \n");
     printf("Enter d for Integer Division\n");
-    printf("******* Press 'Q' or 'q' to quit ");
+    printf("******* Press 'Q' or 'q' to quit\n");
+    printf("* Press 'H' or 'h' to display ");
+    printf("below options *\n\n");
+    printf("Enter 'C' or 'c' to clear the screen and");
+    printf(" display available option \n\n");
     printf("the program ********\n");
 
     
 }
 
-void addition()
+void addition() //Prompt and calculation for addition
 {
     int n, SumOf = 0, j = 0, number;
     printf("\nEnter the number of integers you want to add:");
@@ -98,7 +107,7 @@ void addition()
     printf("Sum of %d numbers = %d \n", n, SumOf);
 }
 
-void subtraction()
+void subtraction() //Prompt and calculation for subtraction
 {
     int a, b, c = 0;
     printf("\nPlease enter first number  : ");
@@ -109,7 +118,7 @@ void subtraction()
     printf("\n%d - %d = %d\n", a, b, c);
 }
 
-void multiplication()
+void multiplication() //Prompt and calculation for multiplication
 {
     int a, b, multip = 0;
     printf("\nPlease enter first number : ");
@@ -120,7 +129,7 @@ void multiplication()
     printf("\nProduct of entered numbers = %d\n", multip);
 }
 
-void division()
+void division() //Prompt and calculation for division
 {
     int a, b, div = 0;
     printf("\nPlease enter first number  : ");
@@ -130,7 +139,7 @@ void division()
     div = a / b;
     printf("\nQuotient of entered numbers=%d\n", div);
 }
-void div_O() //d operator calculation
+void div_O() //d operator prompt and calculation
 {
     
     int numerator, denominator;
